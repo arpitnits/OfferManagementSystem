@@ -2,9 +2,19 @@ LLD
 
 Offer Managment System
 
-Design a system for credit card offers.
+Design a system for credit card offers. 
 
-API's
+1. ADMIN can create offers.
+2. Offers can be fixed or percentage.
+3. There can be multiple eligibility criteria 
+      a. Customer Eligibilty - Age, Gende, etc
+      b. Transaction Eligibilty - Min txn Amount, txn City, Merchant
+4. In case of making offers
+       a. Fixed Offer (FLAT 150 Off)
+       b. Percentage (10% Off Upto 100)      
+5. User can get all the valid offers by passing all user Info and txn details
+
+Create API's for the above functionality
 
 
 Create User
