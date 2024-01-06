@@ -1,24 +1,30 @@
-LLD
+# Offer Managment System (Low Level Design)
 
-Offer Managment System
-
-Design a system for credit card offers. 
+**Design a system for credit card offers.**
 
 1. ADMIN can create offers.
 2. Offers can be fixed or percentage.
-3. There can be multiple eligibility criteria 
-      a. Customer Eligibilty - Age, Gende, etc
-      b. Transaction Eligibilty - Min txn Amount, txn City, Merchant
-4. In case of making offers
-       a. Fixed Offer (FLAT 150 Off)
-       b. Percentage (10% Off Upto 100)      
+3. There can be multiple eligibility criteria: 
+      1. Customer Eligibilty - Age, Gende, etc
+      1. Transaction Eligibilty - Min txn Amount, txn City, Merchant
+4. There can be different types of offers:
+      1. Fixed Offer (FLAT 150 Off)
+      1. Percentage (10% Off Upto 100)      
 5. User can get all the valid offers by passing all user Info and txn details
+
+*Bonus: Design sliding window offer like 1000 Rs spent in 3 days*
+
 
 Create API's for the above functionality
 
+----------------------------------------------------------
 
-Create User
 
+
+<details>
+      <summary> Create User </summary>
+
+```
 curl --location 'http://localhost:8000/create/user' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -26,11 +32,15 @@ curl --location 'http://localhost:8000/create/user' \
     "gender": "MALE",
     "dob": "1987-03-21"
 }
-'
+```
+</details>
 
 
-Get Offers
 
+<details>
+      <summary>Get Offers</summary>
+
+```
 curl --location 'http://localhost:8000/get/offers' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -43,9 +53,14 @@ curl --location 'http://localhost:8000/get/offers' \
     "txnAmount": 10.00
   }
 }'
+```
+</details>
 
-Create Offer(Fixed)
 
+<details>
+      <summary>Create Offer(Fixed)</summary>
+
+```
 curl --location 'http://localhost:8000/create/offer' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -66,9 +81,14 @@ curl --location 'http://localhost:8000/create/offer' \
   },
   "type": "FIXED"
 }'
+```
+</details>
 
-Create Offer(Percentage)
 
+<details>
+      <summary>Create Offer(Percentage)</summary>
+
+```
 curl --location 'http://localhost:8000/create/offer' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -90,3 +110,8 @@ curl --location 'http://localhost:8000/create/offer' \
   },
   "type": "PERCENTAGE"
 }'
+```
+</details>
+
+
+
